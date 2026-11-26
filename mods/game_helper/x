@@ -1,0 +1,440 @@
+ShooterRuleRow < UIWidget
+  height: 22
+  background-color: #363636
+  border-width-bottom: 1
+  border-color-bottom: #222222
+  focusable: true
+  $focus:
+    background-color: #4f4f4f
+
+  UIWidget
+    id: iconFrame
+    size: 20 20
+    anchors.left: parent.left
+    anchors.verticalCenter: parent.verticalCenter
+    margin-left: 2
+    background-color: #262626
+    border-width: 1
+    border-color: #161616
+    phantom: true
+
+    UIWidget
+      id: spellIcon
+      size: 18 18
+      anchors.centerIn: parent
+      image-source: /images/game/spells/spell-icons-32x32
+      image-clip: 0 0 32 32
+      image-size: 18 18
+      phantom: true
+
+    UIItem
+      id: runeIcon
+      size: 18 18
+      anchors.centerIn: parent
+      virtual: true
+      visible: false
+      show-count: false
+      phantom: true
+
+  Label
+    id: spellWordsLabel
+    anchors.left: iconFrame.right
+    anchors.verticalCenter: parent.verticalCenter
+    margin-left: 6
+    width: 165
+    font: verdana-11px-rounded
+    color: #efefef
+    text: exori gran
+    phantom: true
+
+  Label
+    id: condSummaryLabel
+    anchors.left: spellWordsLabel.right
+    anchors.right: enableCheck.left
+    anchors.verticalCenter: parent.verticalCenter
+    margin-left: 6
+    margin-right: 6
+    font: verdana-11px-monochrome
+    color: #cccccc
+    text: MP>=10% | >=1 cr | HP:0-100%
+    phantom: true
+
+  CheckBox
+    id: enableCheck
+    anchors.verticalCenter: parent.verticalCenter
+    anchors.right: upBtn.left
+    margin-right: 4
+    width: 16
+    checked: true
+
+  RowActionButton
+    id: upBtn
+    text: ^
+    anchors.verticalCenter: parent.verticalCenter
+    anchors.right: downBtn.left
+    margin-right: 2
+
+  RowActionButton
+    id: downBtn
+    text: v
+    anchors.verticalCenter: parent.verticalCenter
+    anchors.right: delBtn.left
+    margin-right: 2
+
+  RowActionButton
+    id: delBtn
+    text: X
+    color: #ff6666
+    anchors.verticalCenter: parent.verticalCenter
+    anchors.right: parent.right
+    margin-right: 2
+
+Panel
+  id: shooterTabPanel
+  anchors.fill: parent
+
+  Panel
+    id: bodyPanel
+    anchors.fill: parent
+
+    Panel
+      id: shooterGlobalBox
+      anchors.top: parent.top
+      anchors.left: parent.left
+      anchors.right: parent.right
+      height: 36
+      image-source: /images/ui/2pixel_up_frame_borderimage
+      image-border: 4
+      padding: 8
+
+      CheckBox
+        id: enableShooterCheck
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.left: parent.left
+        width: 155
+        !text: tr('Enable Magic Shooter')
+
+      HelperSmallButton
+        id: shooterSetKeyBtn
+        text: Set Key
+        width: 155
+        height: 18
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.left: enableShooterCheck.right
+        margin-left: 6
+        @onClick: modules.game_helper.openKeyCapture('shooterKey', self)
+
+      CheckBox
+        id: disablePzCheck
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.right: parent.right
+        width: 112
+        !text: tr('Disable in PZ')
+        checked: true
+
+    TextList
+      id: shooterRulesList
+      anchors.top: shooterGlobalBox.bottom
+      anchors.left: parent.left
+      anchors.right: rulesScrollBar.left
+      anchors.bottom: shooterEditorBox.top
+      margin-top: 6
+      margin-bottom: 6
+      padding: 2
+      background-color: #2b2b2b
+      border-width: 1
+      border-color: #191919
+      vertical-scrollbar: rulesScrollBar
+      auto-focus: none
+
+    VerticalScrollBar
+      id: rulesScrollBar
+      anchors.top: shooterGlobalBox.bottom
+      anchors.bottom: shooterEditorBox.top
+      anchors.right: parent.right
+      margin-top: 6
+      margin-bottom: 6
+      step: 22
+      pixel-scroll: true
+
+    Panel
+      id: shooterEditorBox
+      anchors.left: parent.left
+      anchors.right: parent.right
+      anchors.bottom: presetsBox.top
+      margin-bottom: 6
+      height: 112
+      image-source: /images/ui/2pixel_up_frame_borderimage
+      image-border: 4
+      padding: 8
+
+      HelperSpellSlot
+        id: ruleSpellSlot
+        anchors.top: parent.top
+        anchors.left: parent.left
+
+      Label
+        id: ruleSpellNameLabel
+        text: Select Spell / Rune
+        anchors.top: ruleSpellSlot.top
+        anchors.left: ruleSpellSlot.right
+        margin-left: 8
+        width: 165
+        font: verdana-11px-rounded
+        color: #ffdd66
+
+      ComboBox
+        id: ruleTypeCombo
+        width: 72
+        height: 19
+        anchors.bottom: ruleSpellSlot.bottom
+        anchors.left: ruleSpellSlot.right
+        margin-left: 8
+        !tooltip: tr('Select rule type: Spell (Attack/Challenge) or Rune')
+
+      CheckBox
+        id: ruleTargetReqCheck
+        anchors.top: ruleSpellSlot.top
+        anchors.left: ruleSpellNameLabel.right
+        margin-left: 10
+        width: 118
+        !text: tr('Requires Target')
+
+      ComboBox
+        id: rulePriorityCombo
+        width: 132
+        height: 19
+        anchors.top: ruleSpellSlot.top
+        anchors.left: ruleTargetReqCheck.right
+        margin-left: 8
+        !tooltip: tr('Monster filter: All Monsters = any creature. Target Name = only the name typed in the box.')
+
+      TextEdit
+        id: ruleTargetNameEdit
+        anchors.top: ruleSpellSlot.top
+        anchors.left: rulePriorityCombo.right
+        anchors.right: parent.right
+        margin-left: 6
+        height: 19
+        visible: false
+        !placeholder: tr('type the monster name')
+
+      Label
+        id: lblRuleMp
+        text: Mana%:
+        anchors.top: ruleSpellSlot.bottom
+        anchors.left: parent.left
+        margin-top: 10
+        color: #8ec5ff
+        text-auto-resize: true
+
+      HelperNumericEdit
+        id: ruleMpEdit
+        anchors.verticalCenter: lblRuleMp.verticalCenter
+        anchors.left: lblRuleMp.right
+        margin-left: 4
+        width: 38
+        text: 0
+
+      Label
+        text: Creatures:
+        anchors.verticalCenter: lblRuleMp.verticalCenter
+        anchors.left: ruleMpEdit.right
+        margin-left: 12
+        color: #efefef
+        text-auto-resize: true
+
+      ComboBox
+        id: ruleCountModeCombo
+        width: 48
+        height: 19
+        anchors.verticalCenter: lblRuleMp.verticalCenter
+        anchors.left: prev.right
+        margin-left: 4
+        !tooltip: tr('Comparison: >= (At least), = (Exact), < (Less than)')
+
+      HelperNumericEdit
+        id: ruleCreaturesEdit
+        anchors.verticalCenter: lblRuleMp.verticalCenter
+        anchors.left: ruleCountModeCombo.right
+        margin-left: 3
+        width: 34
+        text: 1
+
+      Label
+        text: HP%:
+        anchors.verticalCenter: lblRuleMp.verticalCenter
+        anchors.left: ruleCreaturesEdit.right
+        margin-left: 12
+        color: #cccccc
+        text-auto-resize: true
+
+      HelperNumericEdit
+        id: ruleHpMinEdit
+        anchors.verticalCenter: lblRuleMp.verticalCenter
+        anchors.left: prev.right
+        margin-left: 4
+        width: 34
+        text: 0
+
+      Label
+        text: -
+        anchors.verticalCenter: lblRuleMp.verticalCenter
+        anchors.left: ruleHpMinEdit.right
+        margin-left: 2
+        color: #cccccc
+        text-auto-resize: true
+
+      HelperNumericEdit
+        id: ruleHpMaxEdit
+        anchors.verticalCenter: lblRuleMp.verticalCenter
+        anchors.left: prev.right
+        margin-left: 2
+        width: 36
+        text: 100
+
+      Label
+        text: Delay:
+        anchors.verticalCenter: lblRuleMp.verticalCenter
+        anchors.left: ruleHpMaxEdit.right
+        margin-left: 12
+        color: #cccccc
+        text-auto-resize: true
+
+      HelperNumericEdit
+        id: ruleDelayEdit
+        anchors.verticalCenter: lblRuleMp.verticalCenter
+        anchors.left: prev.right
+        margin-left: 4
+        width: 44
+        text: 0
+
+      Label
+        text: ms
+        anchors.verticalCenter: lblRuleMp.verticalCenter
+        anchors.left: ruleDelayEdit.right
+        margin-left: 2
+        color: #aaaaaa
+        text-auto-resize: true
+
+      HelperSmallButton
+        id: ruleUpBtn
+        text: Up
+        width: 38
+        height: 19
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+
+      HelperSmallButton
+        id: ruleDownBtn
+        text: Down
+        width: 46
+        height: 19
+        anchors.bottom: parent.bottom
+        anchors.left: ruleUpBtn.right
+        margin-left: 4
+
+      HelperSmallButton
+        id: ruleNewBtn
+        text: New
+        width: 48
+        height: 19
+        color: #5ce65c
+        anchors.bottom: parent.bottom
+        anchors.left: ruleDownBtn.right
+        margin-left: 4
+
+      HelperSmallButton
+        id: ruleDelBtn
+        text: Delete
+        width: 52
+        height: 19
+        color: #ff6666
+        anchors.bottom: parent.bottom
+        anchors.left: ruleNewBtn.right
+        margin-left: 4
+
+      HelperBlueButton
+        id: ruleCondBtn
+        text: Condition Settings
+        width: 125
+        height: 19
+        anchors.bottom: parent.bottom
+        anchors.right: parent.right
+
+    Panel
+      id: presetsBox
+      anchors.left: parent.left
+      anchors.right: parent.right
+      anchors.bottom: parent.bottom
+      height: 44
+      image-source: /images/ui/2pixel_up_frame_borderimage
+      image-border: 4
+      padding: 8
+
+      Label
+        id: presetsLbl
+        text: Preset:
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.left: parent.left
+        font: verdana-11px-rounded
+        color: #f0d080
+        text-auto-resize: true
+
+      ComboBox
+        id: presetCombo
+        width: 135
+        height: 20
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.left: presetsLbl.right
+        margin-left: 6
+
+      HelperSmallButton
+        id: presetNewBtn
+        text: New
+        width: 56
+        height: 20
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.left: presetCombo.right
+        margin-left: 6
+        @onClick: modules.game_helper.createNewShooterPreset()
+
+      HelperSmallButton
+        id: presetRenameBtn
+        text: Rename
+        width: 62
+        height: 20
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.left: presetNewBtn.right
+        margin-left: 4
+        @onClick: modules.game_helper.openRenameShooterPresetModal()
+
+      HelperSmallButton
+        id: presetDupBtn
+        text: Duplicate
+        width: 68
+        height: 20
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.left: presetRenameBtn.right
+        margin-left: 4
+        @onClick: modules.game_helper.duplicateShooterPreset()
+
+      HelperSmallButton
+        id: presetDelBtn
+        text: Del
+        width: 44
+        height: 20
+        color: #ff6666
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.left: presetDupBtn.right
+        margin-left: 4
+        @onClick: modules.game_helper.deleteShooterPreset()
+
+      HelperSmallButton
+        id: presetSetKeyBtn
+        text: Set Key
+        width: 165
+        height: 20
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.right: parent.right
+        @onClick: modules.game_helper.openKeyCapture('presetKey', self)
