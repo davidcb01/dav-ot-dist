@@ -1,0 +1,4 @@
+.agents/
+luacheck.py
+davot.log
+*.log
