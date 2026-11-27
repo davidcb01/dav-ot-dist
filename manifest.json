@@ -1,11 +1,11 @@
 {
   "server": "Dav OT",
-  "version": "15.25.261126.1821",
-  "updated_at": "2026-11-26T18:21:17",
-  "changelog": "Atualizacao automatica Dav OT 15.25",
+  "version": "15.25.261127.0017",
+  "updated_at": "2026-11-27T00:17:56",
+  "changelog": "Launcher v1.2.1",
   "base_release_url": "https://github.com/davidcb01/dav-ot-dist/releases/download/base-1525/base_pack.zip",
-  "launcher_version": "1.2.0",
-  "launcher_url": "https://github.com/davidcb01/dav-ot-dist/releases/download/launcher-v1.2.0/DavOTLauncher.exe",
+  "launcher_version": "1.2.1",
+  "launcher_url": "https://github.com/davidcb01/dav-ot-dist/releases/download/launcher-v1.2.1/DavOTLauncher.exe",
   "files": {
     "cacert.pem": {
       "sha256": "36f84cfe854660ddb06a0037b044498e8140586399290f402d73cd7ce18f83dd",
@@ -58944,5 +58944,5 @@
       "size": 964
     }
   },
-  "launcher_sha256": "2bc72ae69132e8291bda994d36f059f4171cce5a638b715a90283c315e94a624"
+  "launcher_sha256": "b15164451b8bfa373a862afc6d2e3b1e9893a92362f5764bcddf83a6be3b219e"
 }
