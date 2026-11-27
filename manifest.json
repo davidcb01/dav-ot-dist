@@ -1,8 +1,8 @@
 {
   "server": "Dav OT",
-  "version": "15.25.261127.0017",
-  "updated_at": "2026-11-27T00:17:56",
-  "changelog": "Launcher v1.2.1",
+  "version": "15.25.261127.0038",
+  "updated_at": "2026-11-27T00:38:19",
+  "changelog": "Corrige exportacao/importacao de configuracoes (BOM UTF-8)",
   "base_release_url": "https://github.com/davidcb01/dav-ot-dist/releases/download/base-1525/base_pack.zip",
   "launcher_version": "1.2.1",
   "launcher_url": "https://github.com/davidcb01/dav-ot-dist/releases/download/launcher-v1.2.1/DavOTLauncher.exe",
@@ -54424,8 +54424,8 @@
       "size": 5946
     },
     "modules/client_options/transfer.lua": {
-      "sha256": "622c89b3bca14c4f07916cb0c103a0afadd613d59501a1f84f2d32d9e940291c",
-      "size": 36163
+      "sha256": "8987668d164135d591ffdd181c09a2df2eb1c60bf0858b3914df005a4fd37b8e",
+      "size": 36216
     },
     "modules/client_options/styles/controls/general.otui": {
       "sha256": "298a06b9717c4f70d5b943601907cf5ece57327b59100ed73d533f52e32fb14e",
