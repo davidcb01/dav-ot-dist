@@ -1,7 +1,7 @@
 {
   "server": "Dav OT",
-  "version": "15.25.261128.1026",
-  "updated_at": "2026-11-28T10:26:36",
+  "version": "15.25.261128.1046",
+  "updated_at": "2026-11-28T10:46:42",
   "changelog": "Atualizacao automatica Dav OT 15.25",
   "base_release_url": "https://github.com/davidcb01/dav-ot-dist/releases/download/base-1525/base_pack.zip",
   "launcher_version": "1.2.1",
@@ -16,11 +16,11 @@
       "size": 798
     },
     "init.lua": {
-      "sha256": "a3c4717612034739d1e4d1c5f01af98b70daa6df681856297cc7a73f1e556922",
-      "size": 6017
+      "sha256": "32bd223cf212f4d3ca17ceb9d3b641aa9a901084c2a4384078da1177ec911aab",
+      "size": 6137
     },
     "otclient.exe": {
-      "sha256": "80f51906f3538b403882e8597d4177f051cb75f9b04235573c785d90a56e84a8",
+      "sha256": "eb7b4051b4df26a45310fb1bd26ae722d21b9c82cdd988cad9eeeef2eb4ac2e1",
       "size": 34314752
     },
     "data/minimap_default.otmm": {
@@ -54528,8 +54528,8 @@
       "size": 2424
     },
     "modules/client_terminal/terminal.lua": {
-      "sha256": "cf717cc51b7807120d2fc1f99191d6101f376b83527ef21785be8cb4e89b0826",
-      "size": 12805
+      "sha256": "1c017767d59dedc4ecaab19f4b760e474ad0c338a4d6144181d67bfb61c0095e",
+      "size": 14377
     },
     "modules/client_terminal/terminal.otmod": {
       "sha256": "1ee3eea7fadcf9c3f80e952c4d6352f3deff46118158f50bccda9f66530b2da4",
