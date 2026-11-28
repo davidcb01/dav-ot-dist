@@ -1,7 +1,7 @@
 {
   "server": "Dav OT",
-  "version": "15.25.261128.1046",
-  "updated_at": "2026-11-28T10:46:42",
+  "version": "15.25.261128.1214",
+  "updated_at": "2026-11-28T12:14:53",
   "changelog": "Atualizacao automatica Dav OT 15.25",
   "base_release_url": "https://github.com/davidcb01/dav-ot-dist/releases/download/base-1525/base_pack.zip",
   "launcher_version": "1.2.1",
@@ -58764,7 +58764,7 @@
       "size": 1833
     },
     "modules/game_walk/walk.lua": {
-      "sha256": "bb83c88285d7ecbaf58bb213d47a4c8855235156ee32ee90a70dae8a7a4b06a2",
+      "sha256": "f12f4b5c4b639274ca3c8e2b893e77a32b1258a5396664d0e093490bb174529c",
       "size": 12694
     },
     "modules/game_walk/walk.otmod": {
