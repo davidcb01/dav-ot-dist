@@ -1,7 +1,7 @@
 {
   "server": "Dav OT",
-  "version": "15.25.261128.1240",
-  "updated_at": "2026-11-28T12:40:59",
+  "version": "15.25.261128.1332",
+  "updated_at": "2026-11-28T13:32:25",
   "changelog": "Atualizacao automatica Dav OT 15.25",
   "base_release_url": "https://github.com/davidcb01/dav-ot-dist/releases/download/base-1525/base_pack.zip",
   "launcher_version": "1.2.1",
@@ -54408,8 +54408,8 @@
       "size": 12797
     },
     "modules/client_options/data_options.lua": {
-      "sha256": "f26a3309d62d3700129cafe014798c95e72723f657c7db218ab8e365050bc4a6",
-      "size": 54041
+      "sha256": "b04d8da7c8ab5e0f6782fc9b7bfe7edc4aa79880273bd628781f8b3ace3cd4b3",
+      "size": 54310
     },
     "modules/client_options/keybins.lua": {
       "sha256": "e07ee94ecf30707597d7403ab8804256d98e8ed7a57cda5a923a2d8dbe432aa5",
@@ -57548,8 +57548,8 @@
       "size": 734
     },
     "modules/game_shaders/shaders.lua": {
-      "sha256": "b31aec89ef916b58c45e9fff7444274a51d4dd2add0a5c1edadbec2e19d8b0f5",
-      "size": 7445
+      "sha256": "47d0a184dfb1fd27b0b4166156d7f3900495acd7b9037c17692959f6a8ac0001",
+      "size": 8108
     },
     "modules/game_shaders/shaders.otmod": {
       "sha256": "74424289da55a116d1aba4a7ced8d87601050834bb9cb581782ac0b5675869c2",
@@ -57598,6 +57598,10 @@
     "modules/game_shaders/shaders/fragment/grayscale.frag": {
       "sha256": "3411307303461a4f445077af74f9b67a8e12d0816758e3cabd90533cd48b5a34",
       "size": 299
+    },
+    "modules/game_shaders/shaders/fragment/hd_cas.frag": {
+      "sha256": "d3c664d101312ebd3cc0e4fbcaeff188c327f33343161231a2f4729fa4ff3a3f",
+      "size": 1048
     },
     "modules/game_shaders/shaders/fragment/heat.frag": {
       "sha256": "f48b3c935ed7ce1f071409c3308ccaa7e89e96e0e66aa6644135041eca1f50d4",
