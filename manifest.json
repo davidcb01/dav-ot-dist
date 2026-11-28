@@ -1,7 +1,7 @@
 {
   "server": "Dav OT",
-  "version": "15.25.261128.0931",
-  "updated_at": "2026-11-28T09:31:16",
+  "version": "15.25.261128.1026",
+  "updated_at": "2026-11-28T10:26:36",
   "changelog": "Atualizacao automatica Dav OT 15.25",
   "base_release_url": "https://github.com/davidcb01/dav-ot-dist/releases/download/base-1525/base_pack.zip",
   "launcher_version": "1.2.1",
@@ -10055,9 +10055,9 @@
       "sha256": "44debd3929c68555c2afd819d2b05e077c3b6fc1fae05f46bfe3a72f2956ae11",
       "size": 12
     },
-    "data/things/1525/appearances-aa44a154f30c7ed59acc25f246286396e4043851ef0b54ef3cf3951e46d1ce50.dat": {
-      "sha256": "7c7c80be9c4aecbcfae40f98b8264924e21cde38de0fbfec5c0c520106fc1a7c",
-      "size": 4862311
+    "data/things/1525/appearances-28cb96d9392fa23dd56be25fb4299b02f044fdc3a826f9c24a61ff93983411fe.dat": {
+      "sha256": "0acb2ca5ced2439c5d91c0a96f79ccd30df808eefbfa59cd0b037d4d5f1ad0f3",
+      "size": 4862386
     },
     "data/things/1525/assets.json.sha256": {
       "sha256": "e5bdcd72012f47381148e05f35d842d2b611dd5d068e1671cfa15320c6083cac",
@@ -10068,8 +10068,8 @@
       "size": 3088373
     },
     "data/things/1525/catalog-content.json": {
-      "sha256": "025bf6b79c5117611e8449a092fcd372b16ec38b8a53e6b5317a28068409f524",
-      "size": 1009906
+      "sha256": "ea5704b2a472ca928c85d0d58eab638e81466e9079c3fc11f0595cffec7a300e",
+      "size": 1118352
     },
     "data/things/1525/map-149b61053e2a4339363323799f63c6741ef7430730e74a9c51698db12a4c1e93.dat": {
       "sha256": "bcfadc46f55986eeb124f5264d9a5242a173a3626cf97c03d227bcae7318b528",
@@ -58948,5 +58948,5 @@
       "size": 964
     }
   },
-  "launcher_sha256": "b15164451b8bfa373a862afc6d2e3b1e9893a92362f5764bcddf83a6be3b219e"
+  "launcher_sha256": "f20c3d6443f40eb5a2810d63e34e7af1fe1b192aa5354f3e808e5a8b3f5751dd"
 }
